@@ -1,4 +1,4 @@
-package com.poc.cyclone
+package com.poc.cyclone.viewmodel
 
 class MainViewModel {
 
