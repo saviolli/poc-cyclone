@@ -1,23 +1,16 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.poc.cyclone"
-    compileSdk = 33
-
     defaultConfig {
-        applicationId = "com.poc.cyclone"
         minSdk = 22
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
-
+        namespace = "com.poc.cyclone.login"
+        compileSdk = 33
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary =  true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -52,8 +45,6 @@ android {
 }
 
 dependencies {
-    implementation(project(mapOf("path" to ":login")))
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
 
@@ -70,15 +61,5 @@ dependencies {
     implementation("io.insert-koin:koin-androidx-compose:3.4.1")
     implementation("io.insert-koin:koin-core:3.3.2")
 
-    testImplementation("io.insert-koin:koin-test:3.3.2")
-    testImplementation("io.insert-koin:koin-test-junit4:3.3.2")
-    testImplementation("io.insert-koin:koin-test-junit5:3.3.2")
-    testImplementation("junit:junit:4.13.2")
-
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.3.3")
-
-    debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.3")
+    implementation("com.airbnb.android:lottie:3.4.0")
 }

@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Cyclone"
 include(":app")
+include(":login")
