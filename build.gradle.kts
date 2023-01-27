@@ -14,7 +14,7 @@ buildscript {
 group = "group"
 
 tasks.cyclonedxBom {
-    setIncludeConfigs(listOf("debugCompileClasspath"))
+    setIncludeConfigs(listOf("runtimeClasspath"))
     setSkipConfigs(listOf("compileClasspath", "testCompileClasspath"))
     setSkipProjects(listOf(rootProject.name))
     setProjectType("application")
